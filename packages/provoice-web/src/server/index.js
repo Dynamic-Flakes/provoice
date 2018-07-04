@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 4003;
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("welcome");
+  res.status(200).send("ok");
 });
 
 // start the server

@@ -59,6 +59,7 @@
   "body-parser": "^1.18.2",
   "compression": "^1.7.2",
   "dom-helpers": "2.4.0",
+  "mongoose": "^5.1.5",
   "express": "^4.16.3",
   "express-handlebars": "^3.0.0",
   "qs": "6.5.1"

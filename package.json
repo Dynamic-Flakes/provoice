@@ -1,5 +1,17 @@
 {
+	"name": "provoice",
+	"scripts": {
+		"bootstrap": "lerna bootstrap",
+		"clean": "lerna clean",
+		"test": "lerna run test"
+	},
 	"devDependencies": {
 		"lerna": "^2.11.0"
-	}
+	},
+	"repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:Dynamic-Flakes/provoice.git#master"
+  },
+	"author": "npm@Dynamic-Flakes",
+  "license": "SEE LICENSE IN <LICENSE>"
 }

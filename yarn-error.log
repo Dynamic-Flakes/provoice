@@ -1,0 +1,53 @@
+Arguments: 
+  /home/engrsunday/.nvm/versions/node/v8.11.1/bin/node /usr/share/yarn/bin/yarn.js run bootstrap
+
+PATH: 
+  /home/engrsunday/bin:/home/engrsunday/.local/bin:/home/engrsunday/bin:/home/engrsunday/.local/bin:/home/engrsunday/.nvm/versions/node/v8.11.1/bin:/home/engrsunday/bin:/home/engrsunday/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/engrsunday/Android/Sdk/tools:/home/engrsunday/Android/Sdk/tools/bin:/home/engrsunday/Android/Sdk/platform-tools:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/engrsunday/Android/Sdk/tools:/home/engrsunday/Android/Sdk/tools/bin:/home/engrsunday/Android/Sdk/platform-tools:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/engrsunday/Android/Sdk/tools:/home/engrsunday/Android/Sdk/tools/bin:/home/engrsunday/Android/Sdk/platform-tools
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  8.11.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/engrsunday/workspace/provoice/package.json: Unexpected token { in JSON at position 50
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:98:30)
+      at /usr/share/yarn/lib/cli.js:109:13
+      at <anonymous>
+
+npm manifest: 
+  {
+  	"devDependencies": {
+  		"lerna": "^2.11.0"
+  	}
+  }
+  {
+  	"name": "provoice",
+  	"scripts": {
+  		"bootstrap": "lerna bootstrap",
+  		"clean": "lerna clean",
+  		"test": "lerna run test"
+  	},
+  	"devDependencies": {
+  		"lerna": "^2.11.0"
+  	},
+  	"repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com:Dynamic-Flakes/provoice.git#master"
+    },
+  	"author": "npm@Dynamic-Flakes",
+    "license": "SEE LICENSE IN <LICENSE>"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

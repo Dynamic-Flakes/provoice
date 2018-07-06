@@ -2,8 +2,9 @@
 	"name": "provoice",
 	"scripts": {
 		"bootstrap": "lerna bootstrap",
-		"clean": "lerna clean",
-		"test": "lerna run test"
+		"clean": "lerna run -- clean",
+    "format": "lerna run -- format",
+		"test": "lerna exec yarn test"
 	},
 	"devDependencies": {
 		"lerna": "^2.11.0"

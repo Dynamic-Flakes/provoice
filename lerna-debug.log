@@ -10,33 +10,40 @@
 5 silly initialize attempt
 6 silly initialize success
 7 silly execute attempt
-8 silly runScriptInDir test [] provoice-desktop
-9 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-desktop' }
-10 silly runScriptInDir test [] provoice-mobile
-11 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-mobile' }
-12 silly runScriptInDir test [] provoice-web
-13 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-web' }
-14 error test Errored while running script in 'provoice-mobile'
-15 error execute callback with error
-16 error Error: Command failed: npm run test
-16 error sh: 1: jest: not found
-16 error npm ERR! file sh
-16 error npm ERR! code ELIFECYCLE
-16 error npm ERR! errno ENOENT
-16 error npm ERR! syscall spawn
-16 error npm ERR! provoice-mobile@1.0.0 test: `jest`
-16 error npm ERR! spawn ENOENT
-16 error npm ERR!
-16 error npm ERR! Failed at the provoice-mobile@1.0.0 test script.
-16 error npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
-16 error npm WARN Local package.json exists, but node_modules missing, did you mean to install?
-16 error
-16 error npm ERR! A complete log of this run can be found in:
-16 error npm ERR!     /home/engrsunday/.npm/_logs/2018-07-05T10_47_22_078Z-debug.log
-16 error
-16 error > provoice-mobile@1.0.0 test /home/engrsunday/workspace/provoice/packages/provoice-mobile
-16 error > jest
-16 error
-16 error
-16 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
-16 error     at <anonymous>
+8 silly runScriptInDir test [] provoice-web
+9 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-web' }
+10 error test Errored while running script in 'provoice-web'
+11 error execute callback with error
+12 error Error: Command failed: yarn run test
+12 error FAIL src/test/routes.test.js
+12 error   GET /list
+12 error     ✕ should error without a valid parameter (24ms)
+12 error   GET /404
+12 error     ✓ should return 404 for non-existent URLs (116ms)
+12 error
+12 error   ● GET /list › should error without a valid parameter
+12 error
+12 error     listen EADDRINUSE :::4008
+12 error
+12 error       at Object._errnoException (util.js:1022:11)
+12 error       at _exceptionWithHostPort (util.js:1044:20)
+12 error       at Server.setupListenHandle [as _listen2] (net.js:1367:14)
+12 error       at listenInCluster (net.js:1408:12)
+12 error       at Server.listen (net.js:1492:7)
+12 error       at Function.listen (node_modules/express/lib/application.js:618:24)
+12 error       at Object.<anonymous> (src/server/index.js:48:5)
+12 error
+12 error Test Suites: 1 failed, 1 total
+12 error Tests:       1 failed, 1 passed, 2 total
+12 error Snapshots:   0 total
+12 error Time:        1.572s, estimated 2s
+12 error Ran all test suites.
+12 error error Command failed with exit code 1.
+12 error $ jest
+12 error   console.log src/server/index.js:49
+12 error     Server is Up and Running at Port :  4008
+12 error
+12 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+12 error
+12 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+12 error     at <anonymous>

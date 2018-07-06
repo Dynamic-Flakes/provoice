@@ -26,6 +26,12 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+        # - run:
+        #     shell: /bin/sh
+        #     command: |
+        #         echo Create npm token interpolation
+        #         echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+
       - run: yarn run bootstrap
 
       - save_cache:

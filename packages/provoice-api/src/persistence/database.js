@@ -1,4 +1,4 @@
-module.exports = {
-    database: 'mongodb://localhost:27017/cardealerdb',
-    secret: 'coolsecret'
+export default {
+  database: "mongodb://localhost:27017/cardealerdb",
+  secret: "coolsecret"
 }

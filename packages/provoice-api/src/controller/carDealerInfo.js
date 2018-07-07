@@ -30,19 +30,19 @@ module.exports = {
   },
 
   getUserCars: async (req, res, next) => {
-		const { userId } = req.params;
-		const user = await User.findById(userId).populate('cars');
-		res.status(200).json(user.cars);
-	},
+    const { userId } = req.params;
+    const user = await Dealer.findById(userId).populate("cars");
+    res.status(200).json(user.cars);
+  },
 
-	newUserCar: async (req, res, next) => {
-		const { userId } = req.params;
-		const newCar = new Car(req.body);
-		const user = await User.findById(userId);
-		newCar.seller = user;
-		await newCar.save();
-		user.cars.push(newCar);
-		await user.save();
-		res.status(201).json(newCar);
-	}
+  newUserCar: async (req, res, next) => {
+    const { userId } = req.params;
+    const newCar = new Car(req.body);
+    const user = await User.findById(userId);
+    newCar.seller = user;
+    await newCar.save();
+    user.cars.push(newCar);
+    await user.save();
+    res.status(201).json(newCar);
+  }
 };

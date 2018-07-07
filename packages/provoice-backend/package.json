@@ -6,7 +6,6 @@
   "author": "npm@Dynamic-Flakes",
   "license": "SEE LICENSE IN <LICENSE>",
   "scripts": {
-    "test": "jest --config jest/test.config.json",
     "coverage": "yarn test --coverage",
     "postcoverage": "opn coverage/lcov-report/index.html",
     "dev": "nodemon --delay 250ms --exec NODE_ENV=development babel-node -- ./src/server/",
@@ -22,7 +21,10 @@
     "minor": "npm version minor && npm publish",
     "major": "npm version major && npm publish",
     "prepublishOnly": "npm run lint && npm test && npm run build",
-    "postpublish": "git push origin master --follow-tags"
+    "postpublish": "git push origin master --follow-tags",
+    "test": "yarn run test-only",
+   "test-only": "jest --coverage",
+   "test:watch": "jest --watch"
   },
   "pre-commit": [
     "lint",

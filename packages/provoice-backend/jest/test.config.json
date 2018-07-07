@@ -1,21 +1,28 @@
-{
-  "moduleFileExtensions": ["js", "jsx"],
-  "moduleDirectories": ["node_modules"],
-  "testRegex": "src.*\\.test\\.(js|jsx)$",
-  "collectCoverageFrom": [
-    "src/**/*.js"
-  ],
-  "coverageThreshold": {
-    "global": {
-      "branches": 100,
-      "functions": 100,
-      "lines": 100,
-      "statements": 100
-    }
-  },
-  "moduleNameMapper": {
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
-    "<rootDir>/__mocks__/fileMock.js",
-    "\\.(css|less|scss)$": "identity-obj-proxy"
-  }
+"jest": {
+	"testEnvironment": "node",
+	"moduleFileExtensions": [
+		"js",
+		"json"
+	],
+	"moduleDirectories": [
+		"node_modules",
+		"src"
+	],
+	"transform": {
+		"^.+\\.js$": "babel-jest"
+	},
+	"roots": [
+		"<rootDir>/__test__"
+	],
+	"setupFiles": [
+		"<rootDir>/__test__/test-setup.js"
+	],
+	"moduleNameMapper": {
+		"client": "<rootDir>/src/client",
+		"common": "<rootDir>/src/common",
+		"server": "<rootDir>/src/server",
+		"!CONFIG": "<rootDir>/config/env/test.js",
+		"\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/file.js",
+		"\\.(css|less)$": "identity-obj-proxy"
+	}
 }

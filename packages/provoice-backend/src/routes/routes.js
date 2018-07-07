@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router } from "express";
 
 const routes = Router();
 
@@ -12,7 +12,7 @@ routes.get('/', (req, res) => {
 routes.get('/list', (req, res, next) => {
   const { title } = req.query;
 
-  if (title == null || title === '') {
+  if (title == null || title === "") {
     next(new Error('The "title" parameter is required'));
     return;
   }

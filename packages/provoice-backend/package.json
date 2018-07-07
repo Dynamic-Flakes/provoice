@@ -23,8 +23,8 @@
     "prepublishOnly": "npm run lint && npm test && npm run build",
     "postpublish": "git push origin master --follow-tags",
     "test": "yarn run test-only",
-   "test-only": "jest --coverage",
-   "test:watch": "jest --watch"
+    "test-only": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "pre-commit": [
     "lint",
@@ -54,7 +54,6 @@
     "jest": "^21.2.1",
     "nodemon": "1.11.0",
     "npm-watch": "^0.3.0",
-    "opn-cli": "^3.1.0",
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2"
   },

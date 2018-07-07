@@ -4,7 +4,7 @@
 		"bootstrap": "lerna bootstrap",
 		"clean": "lerna run -- clean",
     "format": "lerna run -- format",
-		"test": "lerna run test"
+		"test": "lerna run test --stream"
 	},
 	"devDependencies": {
 		"lerna": "^2.11.0"

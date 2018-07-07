@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Read the environement variable to initializate the process
-const PORT = process.env.PORT || 4009;
+const PORT = process.env.PORT || 4003;
 
 // Routes
 app.use("/", routes);

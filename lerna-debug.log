@@ -1,49 +1,26 @@
-0 silly input [ 'test' ]
-1 silly flags { _: [ 'run' ],
+0 silly input []
+1 silly flags { _: [ 'add' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   script: 'test',
+1 silly flags   dev: false,
+1 silly flags   D: false,
+1 silly flags   scope: 'yarn',
 1 silly flags   args: [] }
 2 verbose rootPath /home/engrsunday/workspace/provoice
 3 info version 2.11.0
-4 silly existsSync /home/engrsunday/workspace/provoice/VERSION
-5 silly initialize attempt
-6 silly initialize success
-7 silly execute attempt
-8 silly runScriptInDir test [] provoice-web
-9 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-web' }
-10 error test Errored while running script in 'provoice-web'
-11 error execute callback with error
-12 error Error: Command failed: yarn run test
-12 error FAIL src/test/routes.test.js
-12 error   GET /list
-12 error     ✕ should error without a valid parameter (24ms)
-12 error   GET /404
-12 error     ✓ should return 404 for non-existent URLs (116ms)
-12 error
-12 error   ● GET /list › should error without a valid parameter
-12 error
-12 error     listen EADDRINUSE :::4008
-12 error
-12 error       at Object._errnoException (util.js:1022:11)
-12 error       at _exceptionWithHostPort (util.js:1044:20)
-12 error       at Server.setupListenHandle [as _listen2] (net.js:1367:14)
-12 error       at listenInCluster (net.js:1408:12)
-12 error       at Server.listen (net.js:1492:7)
-12 error       at Function.listen (node_modules/express/lib/application.js:618:24)
-12 error       at Object.<anonymous> (src/server/index.js:48:5)
-12 error
-12 error Test Suites: 1 failed, 1 total
-12 error Tests:       1 failed, 1 passed, 2 total
-12 error Snapshots:   0 total
-12 error Time:        1.572s, estimated 2s
-12 error Ran all test suites.
-12 error error Command failed with exit code 1.
-12 error $ jest
-12 error   console.log src/server/index.js:49
-12 error     Server is Up and Running at Port :  4008
-12 error
-12 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-12 error
-12 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
-12 error     at <anonymous>
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /home/engrsunday/workspace/provoice/VERSION
+7 info versioning independent
+8 info scope yarn
+9 error EPACKAGES Errored while collecting packages and package graph
+10 error Error: No packages found that match scope 'yarn'
+10 error     at Function.filterPackages (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/PackageUtilities.js:252:17)
+10 error     at AddCommand.runPreparations (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:333:60)
+10 error     at /home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:209:18
+10 error     at new Promise (<anonymous>)
+10 error     at AddCommand.run (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:193:14)
+10 error     at Object.handler (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/commands/AddCommand.js:79:14)
+10 error     at Object.self.runCommand (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/lib/command.js:233:22)
+10 error     at Object.Yargs.self._parseArgs (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
+10 error     at Object.Yargs.self.parse (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/yargs.js:532:23)

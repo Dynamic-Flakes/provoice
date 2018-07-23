@@ -1,6 +1,8 @@
-import mongo from "../config/mongoose";
+import mongo from "../config/persistence/mongoose";
 
-const ModelSchema = new mongo.Schema({
+const { Schema } = mongo.Schema;
+
+const ModelSchema = new Schema({
   makeId: { type: String, required: true },
   model: { type: String, required: true }
 });

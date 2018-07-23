@@ -1,5 +1,6 @@
 import { Router } from 'express';
 
+// get an instance of the router for api routes
 const routes = Router();
 
 /**

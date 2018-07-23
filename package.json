@@ -3,16 +3,16 @@
 	"scripts": {
 		"bootstrap": "lerna bootstrap",
 		"clean": "lerna run -- clean",
-    "format": "lerna run -- format",
-		"test": "lerna exec yarn test"
+		"format": "lerna run -- format",
+		"test": "lerna run test"
 	},
 	"devDependencies": {
 		"lerna": "^2.11.0"
 	},
 	"repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com:Dynamic-Flakes/provoice.git#master"
-  },
+		"type": "git",
+		"url": "git+ssh://git@github.com:Dynamic-Flakes/provoice.git#master"
+	},
 	"author": "npm@Dynamic-Flakes",
-  "license": "SEE LICENSE IN <LICENSE>"
+	"license": "SEE LICENSE IN <LICENSE>"
 }

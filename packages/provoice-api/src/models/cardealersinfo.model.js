@@ -1,6 +1,10 @@
-import mongo from "../config/mongoose";
+// import mongoosePaginate from "mongoose-paginate";
 
-const CarDealerInfoSchema = new mongo.Schema({
+import mongo from "../config/persistence/mongoose";
+
+const  Schema  = mongo.Schema;
+
+const CarDealerInfoSchema = new Schema({
   carDealerInfo: {
     name: { type: String },
     phoneNo: { type: Number, required: true },
@@ -9,10 +13,11 @@ const CarDealerInfoSchema = new mongo.Schema({
     address: { type: String, required: true }
   },
   description: String,
-  created: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now },
   reported: { type: Date, default: Date.now }
 });
 
+// CarDealerInfoSchema.plugin(mongoosePaginate);
 const CarDealerInfo = mongo.model("CarDealerInfo", CarDealerInfoSchema);
 
 export default CarDealerInfo;

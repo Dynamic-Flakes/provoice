@@ -6,10 +6,9 @@ import methodOverride from 'method-override';
 import cors from 'cors';
 import helmet from 'helmet';
 import passport from 'passport';
-import routes from '../api/routes/v1';
-import { logs } from './vars';
-import strategies from './passport';
-import error from '../api/middlewares/error';
+//import routes from '../api/routes/v1';
+// import strategies from './passport';
+// import error from '../api/middlewares/error';
 
 /**
 * Express instance
@@ -18,7 +17,7 @@ import error from '../api/middlewares/error';
 const app = express();
 
 // request logging. dev: console | production: file
-app.use(morgan(logs));
+//app.use(morgan(logs));
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json());
@@ -38,24 +37,24 @@ app.use(helmet());
 app.use(cors());
 
 // enable authentication
-app.use(passport.initialize());
-passport.use('jwt', strategies.jwt);
-passport.use('facebook', strategies.facebook);
-passport.use('google', strategies.google);
+// app.use(passport.initialize());
+// passport.use('jwt', strategies.jwt);
+// passport.use('facebook', strategies.facebook);
+// passport.use('google', strategies.google);
 
 // mount api v1 routes
-app.use('/v1', routes);
+//app.use('/v1', routes);
 
 // Mount public routes
 app.use("/public", express.static(`${__dirname}/public`));
 
 // if error is not an instanceOf APIError, convert it.
-app.use(error.converter);
+//app.use(error.converter);
 
 // catch 404 and forward to error handler
-app.use(error.notFound);
+//app.use(error.notFound);
 
 // error handler, send stacktrace only during development
-app.use(error.handler);
+//app.use(error.handler);
 
-module.exports = app;
+export default app;

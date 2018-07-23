@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import connect from './connect';
+import connect from './connectdb';
 
 export const close = mongo => mongo.disconnect();
 

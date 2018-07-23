@@ -75,7 +75,7 @@ const config = convict({
     database: {
       doc: 'Mongo database',
       format: String,
-      default: '',
+      default: 'cardealerdb',
       env: 'MONGO_DB',
       arg: 'mongo-db',
     },
@@ -145,9 +145,12 @@ const config = convict({
   }
 });
 
+// load environment dependent configuration
+// var env = config.get('env');
+// config.loadFile('./config/test.json');
+
 // throws error if config does not conform to schema
 config.validate({ allowed: 'strict' });
-
 
 export default config;
 

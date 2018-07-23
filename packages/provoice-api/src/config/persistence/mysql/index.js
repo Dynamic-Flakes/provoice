@@ -1,4 +1,4 @@
-import connect from './connect';
+import connect from './connectdb';
 
 export const close = knex => knex.destroy();
 

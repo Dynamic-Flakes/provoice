@@ -1,4 +1,3 @@
-require('dotenv').config();
 import convict from 'convict';
 
 // this loads the defined variables from .env
@@ -13,21 +12,21 @@ const config = convict({
   },
   server: {
     hostname: {
-      doc: 'Microservice hostname',
+      doc: 'Provoice hostname',
       format: String,
       default: '127.0.0.1',
       env: 'SERVER_HOSTNAME',
       arg: 'server-hostname',
     },
     port: {
-      doc: 'Microservice port',
+      doc: 'Provoice port',
       format: 'port',
       default: 4015,
       env: 'SERVER_PORT',
       arg: 'server-port',
     },
     db: {
-      doc: 'Microservice database',
+      doc: 'Provoice database',
       format: String,
       default: 'mysql',
       env: 'SERVER_DB',

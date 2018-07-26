@@ -8,6 +8,7 @@
 2 verbose rootPath /home/engrsunday/workspace/provoice
 3 info version 2.11.0
 4 silly existsSync /home/engrsunday/workspace/provoice/VERSION
+<<<<<<< HEAD
 5 silly initialize attempt
 6 silly initialize success
 7 silly execute attempt
@@ -60,3 +61,21 @@
 11 error
 11 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
 11 error     at <anonymous>
+=======
+5 info versioning independent
+6 silly initialize attempt
+7 silly initialize success
+8 silly execute attempt
+9 silly runScriptInDir test [] provoice-api
+10 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-api' }
+11 error test Errored while running script in 'provoice-api'
+12 error execute callback with error
+13 error Error: Command failed: yarn run test
+13 error /bin/sh: 1: cross-env: not found
+13 error error Command failed with exit code 127.
+13 error $ cross-env NODE_ENV=test nyc --reporter=html --reporter=text  mocha --compilers js:babel-core/register --timeout 20000 --recursive src/tests
+13 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+13 error
+13 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+13 error     at <anonymous>
+>>>>>>> api-setup

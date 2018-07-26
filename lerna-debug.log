@@ -160,5 +160,5 @@
 15 error ------------------------|----------|----------|----------|----------|-------------------|
 15 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
 15 error
-15 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+15 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)https://github.com/Dynamic-Flakes/provoice/pull/2
 15 error     at <anonymous>

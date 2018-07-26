@@ -1,14 +1,16 @@
-import express from 'express';
-import morgan from 'morgan';
-import bodyParser from 'body-parser';
-import compress from 'compression';
-import methodOverride from 'method-override';
-import cors from 'cors';
-import helmet from 'helmet';
-import passport from 'passport';
-//import routes from '../api/routes/v1';
-// import strategies from './passport';
-// import error from '../api/middlewares/error';
+const express = require('express');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const compress = require('compression');
+const methodOverride = require('method-override');
+const cors = require('cors');
+const helmet = require('helmet');
+const passport = require('passport');
+
+const routes = require('../routes/v1');
+const { logs } = require('./vars');
+const strategies = require('./passport');
+const error = require('../middlewares/error');
 
 /**
 * Express instance
@@ -17,7 +19,7 @@ import passport from 'passport';
 const app = express();
 
 // request logging. dev: console | production: file
-//app.use(morgan(logs));
+app.use(morgan(logs));
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json());
@@ -37,24 +39,21 @@ app.use(helmet());
 app.use(cors());
 
 // enable authentication
-// app.use(passport.initialize());
-// passport.use('jwt', strategies.jwt);
-// passport.use('facebook', strategies.facebook);
-// passport.use('google', strategies.google);
+app.use(passport.initialize());
+passport.use('jwt', strategies.jwt);
+passport.use('facebook', strategies.facebook);
+passport.use('google', strategies.google);
 
 // mount api v1 routes
-//app.use('/v1', routes);
-
-// Mount public routes
-app.use("/public", express.static(`${__dirname}/public`));
+app.use('/v1', routes);
 
 // if error is not an instanceOf APIError, convert it.
-//app.use(error.converter);
+app.use(error.converter);
 
 // catch 404 and forward to error handler
-//app.use(error.notFound);
+app.use(error.notFound);
 
 // error handler, send stacktrace only during development
-//app.use(error.handler);
+app.use(error.handler);
 
-export default app;
+module.exports = app;

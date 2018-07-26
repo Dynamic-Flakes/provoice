@@ -1,17 +1,18 @@
-import config from '../config/config';
-import app from '../config/express';
-import mongoose from '../config/persistence/mongodb/connectdb';
+// make bluebird default Promise
+Promise = require('bluebird'); // eslint-disable-line no-global-assign
+
+const { port, env } = require('../config/vars');
+const app = require('../config/express');
+const mongoose = require('../config/mongoose');
 
 // open mongoose connection
-require('../config/persistence/mongodb/connectdb');
+mongoose.connect();
 
-// listern to the port
-const port = config.get('server.port');
-app.listen(port, () => console.info(`server started on port ${port}`));
+// listen to requests
+app.listen(port, () => console.info(`server started on port ${port} (${env})`));
 
 /**
 * Exports express
 * @public
 */
-
-export default app;
+module.exports = app;

@@ -1,26 +1,164 @@
-0 silly input []
-1 silly flags { _: [ 'add' ],
+0 silly input [ 'test' ]
+1 silly flags { _: [ 'run' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   dev: false,
-1 silly flags   D: false,
-1 silly flags   scope: 'yarn',
+1 silly flags   script: 'test',
 1 silly flags   args: [] }
 2 verbose rootPath /home/engrsunday/workspace/provoice
 3 info version 2.11.0
-4 silly isInitialized
-5 silly isInitialized true
-6 silly existsSync /home/engrsunday/workspace/provoice/VERSION
-7 info versioning independent
-8 info scope yarn
-9 error EPACKAGES Errored while collecting packages and package graph
-10 error Error: No packages found that match scope 'yarn'
-10 error     at Function.filterPackages (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/PackageUtilities.js:252:17)
-10 error     at AddCommand.runPreparations (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:333:60)
-10 error     at /home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:209:18
-10 error     at new Promise (<anonymous>)
-10 error     at AddCommand.run (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:193:14)
-10 error     at Object.handler (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/commands/AddCommand.js:79:14)
-10 error     at Object.self.runCommand (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/lib/command.js:233:22)
-10 error     at Object.Yargs.self._parseArgs (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
-10 error     at Object.Yargs.self.parse (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/yargs.js:532:23)
+4 silly existsSync /home/engrsunday/workspace/provoice/VERSION
+5 info versioning independent
+6 silly initialize attempt
+7 silly initialize success
+8 silly execute attempt
+9 silly runScriptInDir test [] provoice-api
+10 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-api' }
+11 silly runScriptInDir test [] provoice-backend
+12 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-backend' }
+13 error test Errored while running script in 'provoice-api'
+14 error execute callback with error
+15 error Error: Command failed: yarn run test
+15 error error Command failed with exit code 2.
+15 error $ cross-env NODE_ENV=test nyc --reporter=html --reporter=text  mocha --compilers js:babel-core/register --timeout 20000 --recursive src/tests
+15 error
+15 error
+15 error server started on port 3000 (test)
+15 error   Authentication API
+15 error     POST /v1/auth/register
+15 error       1) "before each" hook for "should register a new user when request is ok"
+15 error
+15 error   POST /v1/users
+15 error [0mPOST /v1/users [32m201 [0m66.777 ms - 138[0m
+15 error     ✓ should create a new user when request is ok (100ms)
+15 error [0mPOST /v1/users [32m201 [0m14.932 ms - 137[0m
+15 error     ✓ should create a new user and set default role to "user"
+15 error [0mPOST /v1/users [33m409 [0m15.458 ms - 41[0m
+15 error     2) should report error when email already exists
+15 error [0mPOST /v1/users [33m400 [0m6.238 ms - 153[0m
+15 error     ✓ should report error when email is not provided
+15 error [0mPOST /v1/users [33m400 [0m5.791 ms - 187[0m
+15 error     ✓ should report error when password length is less than 6
+15 error [0mPOST /v1/users [33m403 [0m3.401 ms - 34[0m
+15 error     ✓ should report error when logged user is not an admin
+15 error
+15 error   GET /v1/users
+15 error [0mGET /v1/users [32m200 [0m11.560 ms - 269[0m
+15 error     ✓ should get all users
+15 error [0mGET /v1/users?page=2&perPage=1 [32m200 [0m6.440 ms - 133[0m
+15 error     ✓ should get all users with pagination
+15 error [0mGET /v1/users?email=jonsno%40gmail.com [32m200 [0m5.573 ms - 133[0m
+15 error     ✓ should filter users
+15 error [0mGET /v1/users?page=%3F&perPage=whaat [33m400 [0m3.891 ms - 263[0m
+15 error     ✓ should report error when pagination's parameters are not a number
+15 error [0mGET /v1/users [33m403 [0m3.833 ms - 34[0m
+15 error     ✓ should report error if logged user is not an admin
+15 error
+15 error   GET /v1/users/:userId
+15 error [0mGET /v1/users/5b59a21b04c88f245e8e0ac2 [32m200 [0m5.976 ms - 135[0m
+15 error     ✓ should get user
+15 error [0mGET /v1/users/56c787ccc67fc16ccc1a5e92 [33m404 [0m2.372 ms - 44[0m
+15 error     ✓ should report error "User does not exist" when user does not exists
+15 error [0mGET /v1/users/palmeiras1914 [33m404 [0m0.836 ms - 44[0m
+15 error     ✓ should report error "User does not exist" when id is not a valid ObjectID
+15 error [0mGET /v1/users/5b59a21b04c88f245e8e0ac8 [33m403 [0m4.598 ms - 34[0m
+15 error     ✓ should report error when logged user is not the same as the requested one
+15 error
+15 error   PUT /v1/users/:userId
+15 error [0mPUT /v1/users/5b59a21b04c88f245e8e0aca [32m200 [0m17.868 ms - 137[0m
+15 error     ✓ should replace user
+15 error [0mPUT /v1/users/5b59a21b04c88f245e8e0acd [33m400 [0m5.614 ms - 153[0m
+15 error     ✓ should report error when email is not provided
+15 error [0mPUT /v1/users/5b59a21b04c88f245e8e0acf [33m400 [0m5.441 ms - 187[0m
+15 error     ✓ should report error user when password length is less than 6
+15 error [0mPUT /v1/users/palmeiras1914 [33m404 [0m0.995 ms - 44[0m
+15 error     ✓ should report error "User does not exist" when user does not exists
+15 error [0mPUT /v1/users/5b59a21c04c88f245e8e0ad3 [33m403 [0m4.468 ms - 34[0m
+15 error     ✓ should report error when logged user is not the same as the requested one
+15 error [0mPUT /v1/users/5b59a21c04c88f245e8e0ad6 [32m200 [0m10.346 ms - 137[0m
+15 error     ✓ should not replace the role of the user (not admin)
+15 error
+15 error   PATCH /v1/users/:userId
+15 error [0mPATCH /v1/users/5b59a21c04c88f245e8e0ad8 [32m200 [0m10.498 ms - 137[0m
+15 error     ✓ should update user
+15 error [0mPATCH /v1/users/5b59a21c04c88f245e8e0ada [32m200 [0m5.905 ms - 135[0m
+15 error     ✓ should not update user when no parameters were given
+15 error [0mPATCH /v1/users/palmeiras1914 [33m404 [0m0.817 ms - 44[0m
+15 error     ✓ should report error "User does not exist" when user does not exists
+15 error [0mPATCH /v1/users/5b59a21c04c88f245e8e0ade [33m403 [0m5.368 ms - 34[0m
+15 error     ✓ should report error when logged user is not the same as the requested one
+15 error [0mPATCH /v1/users/5b59a21c04c88f245e8e0ae1 [32m200 [0m7.110 ms - 131[0m
+15 error     ✓ should not update the role of the user (not admin)
+15 error
+15 error   DELETE /v1/users
+15 error [0mDELETE /v1/users/5b59a21c04c88f245e8e0ae2 [32m204 [0m11.159 ms - -[0m
+15 error [0mGET /v1/users [33m401 [0m5.024 ms - 38[0m
+15 error     ✓ should delete user
+15 error [0mDELETE /v1/users/palmeiras1914 [33m404 [0m0.685 ms - 44[0m
+15 error     ✓ should report error "User does not exist" when user does not exists
+15 error [0mDELETE /v1/users/5b59a21c04c88f245e8e0ae6 [33m403 [0m4.679 ms - 34[0m
+15 error     ✓ should report error when logged user is not the same as the requested one
+15 error
+15 error   GET /v1/users/profile
+15 error [0mGET /v1/users/profile [32m200 [0m3.040 ms - 131[0m
+15 error     ✓ should get the logged user's info
+15 error [0mGET /v1/users/profile [33m401 [0m0.000 ms - 36[0m
+15 error     ✓ should report error without stacktrace when accessToken is expired
+15 error
+15 error
+15 error   30 passing (1s)
+15 error   2 failing
+15 error
+15 error   1) Authentication API "before each" hook for "should register a new user when request is ok":
+15 error      ReferenceError: expiredRefreshToken is not defined
+15 error       at Context.<anonymous> (src/tests/integration/auth.test.js:49:5)
+15 error
+15 error   2) POST /v1/users should report error when email already exists:
+15 error      TypeError: Cannot read property '0' of undefined
+15 error       at src/tests/integration/user.test.js:110:29
+15 error       at tryCatcher (node_modules/bluebird/js/release/util.js:16:23)
+15 error       at Promise._settlePromiseFromHandler (node_modules/bluebird/js/release/promise.js:512:31)
+15 error       at Promise._settlePromise (node_modules/bluebird/js/release/promise.js:569:18)
+15 error       at Promise._settlePromise0 (node_modules/bluebird/js/release/promise.js:614:10)
+15 error       at Promise._settlePromises (node_modules/bluebird/js/release/promise.js:693:18)
+15 error       at Async._drainQueue (node_modules/bluebird/js/release/async.js:133:16)
+15 error       at Async._drainQueues (node_modules/bluebird/js/release/async.js:143:10)
+15 error       at Immediate.Async.drainQueues (node_modules/bluebird/js/release/async.js:17:14)
+15 error
+15 error
+15 error
+15 error ------------------------|----------|----------|----------|----------|-------------------|
+15 error File                    |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+15 error ------------------------|----------|----------|----------|----------|-------------------|
+15 error All files               |    74.79 |    68.89 |    68.75 |    75.37 |                   |
+15 error  config                 |    84.13 |       50 |       60 |    83.61 |                   |
+15 error   express.js            |      100 |      100 |      100 |      100 |                   |
+15 error   mongoose.js           |       70 |       50 |       50 |       70 |           9,10,15 |
+15 error   passport.js           |    68.18 |       50 |    66.67 |       65 |... 25,26,27,28,30 |
+15 error   vars.js               |      100 |       50 |      100 |      100 |             18,21 |
+15 error  controllers            |    58.43 |      100 |    61.11 |    58.33 |                   |
+15 error   auth.controller.js    |    19.51 |      100 |        0 |    20.51 |... 76,80,81,82,84 |
+15 error   user.controller.js    |    91.67 |      100 |    84.62 |    91.11 |      64,79,92,105 |
+15 error  middlewares            |    94.83 |    88.24 |     87.5 |    94.23 |                   |
+15 error   auth.js               |     97.3 |    96.15 |      100 |    96.77 |                37 |
+15 error   error.js              |    90.48 |     62.5 |    66.67 |    90.48 |             59,63 |
+15 error  models                 |    67.06 |    52.78 |    81.82 |    68.75 |                   |
+15 error   refreshToken.model.js |       50 |      100 |        0 |       50 |... 39,40,41,44,45 |
+15 error   user.model.js         |    70.42 |    52.78 |       90 |    72.73 |... 24,225,227,228 |
+15 error  routes/v1              |    96.67 |      100 |        0 |      100 |                   |
+15 error   auth.route.js         |      100 |      100 |      100 |      100 |                   |
+15 error   index.js              |       90 |      100 |        0 |      100 |                   |
+15 error   user.route.js         |      100 |      100 |      100 |      100 |                   |
+15 error  server                 |      100 |      100 |      100 |      100 |                   |
+15 error   index.js              |      100 |      100 |      100 |      100 |                   |
+15 error  services               |    18.75 |      100 |        0 |    21.43 |                   |
+15 error   authProviders.js      |    18.75 |      100 |        0 |    21.43 |... 22,23,24,27,28 |
+15 error  utils                  |      100 |     62.5 |      100 |      100 |                   |
+15 error   APIError.js           |      100 |     62.5 |      100 |      100 |           9,30,32 |
+15 error  validations            |      100 |      100 |      100 |      100 |                   |
+15 error   auth.validation.js    |      100 |      100 |      100 |      100 |                   |
+15 error   user.validation.js    |      100 |      100 |      100 |      100 |                   |
+15 error ------------------------|----------|----------|----------|----------|-------------------|
+15 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
+15 error
+15 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+15 error     at <anonymous>

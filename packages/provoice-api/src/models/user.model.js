@@ -1,15 +1,13 @@
-import mongoose from 'mongoose';
-import httpStatus from 'http-status';
-import { omitBy, isNil } from 'lodash';
-import bcrypt from 'bcryptjs';
-import moment from 'moment-timezone';
-import jwt from 'jwt-simple';
-import uuidv4 from 'uuid/v4';
+const mongoose = require('mongoose');
+const httpStatus = require('http-status');
+const { omitBy, isNil } = require('lodash');
+const bcrypt = require('bcryptjs');
+const moment = require('moment-timezone');
+const jwt = require('jwt-simple');
+const uuidv4 = require('uuid/v4');
 
-import APIError from '../utils/APIError';
-import config from '../config/config';
-
-import { env, jwtSecret, jwtExpirationInterval } from '../../config/vars';
+const APIError = require('../utils/APIError');
+const { env, jwtSecret, jwtExpirationInterval } = require('../config/vars');
 
 /**
 * User Roles
@@ -68,7 +66,7 @@ userSchema.pre('save', async function save(next) {
   try {
     if (!this.isModified('password')) return next();
 
-    const rounds = config.get('env') === 'test' ? 1 : 10;
+    const rounds = env === 'test' ? 1 : 10;
 
     const hash = await bcrypt.hash(this.password, rounds);
     this.password = hash;

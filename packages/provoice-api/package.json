@@ -9,7 +9,7 @@
   "engines": {
     "node": ">=8.9.4",
     "yarn": ">=1.6.0"
-},
+  },
   "scripts": {
     "precommit": "yarn lint",
     "prestart": "yarn docs",
@@ -36,8 +36,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:Dynamic-Flakes/provoice-web.git#master" 
-   },
+    "url": "git+ssh://git@github.com:Dynamic-Flakes/provoice-web.git#master"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
@@ -45,6 +45,7 @@
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.0",
     "compression": "^1.6.2",
+    "convict": "^4.3.2",
     "cors": "^2.8.3",
     "cross-env": "^5.0.1",
     "dotenv-safe": "^6.0.0",

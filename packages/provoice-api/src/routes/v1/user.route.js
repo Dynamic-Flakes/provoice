@@ -44,5 +44,4 @@ router
    // PATCH- v1/users/:id Delete User
   .delete(authorize(LOGGED_USER), controller.remove);
 
-
-module.exports = router;
+  module.exports = router;

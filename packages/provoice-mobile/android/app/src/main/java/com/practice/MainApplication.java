@@ -1,4 +1,4 @@
-package com.provoice;
+package com.provoicemobile;
 
 import android.app.Application;
 

@@ -6,7 +6,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Welcome to Provoice App</Text>
-        <Text>Enjoy digital invoice </Text>
+        <Text>Enjoy digital invoice any where you go  </Text>
         <Text>With this provoice app, your business will enjoy profits.</Text>
       </View>
     );

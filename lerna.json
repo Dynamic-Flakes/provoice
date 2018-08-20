@@ -1,8 +1,9 @@
 {
   "lerna": "2.11.0",
-  "packages": [
-    "packages/provoice-api"
+  "workspaces": [
+    "packages/*"
   ],
+
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": false

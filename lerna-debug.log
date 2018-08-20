@@ -1,81 +1,26 @@
-0 silly input [ 'test' ]
-1 silly flags { _: [ 'run' ],
+0 silly input [ 'native-base@2.7.2' ]
+1 silly flags { _: [ 'add' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   stream: true,
-1 silly flags   script: 'test',
-1 silly flags   args: [] }
+1 silly flags   dev: false,
+1 silly flags   D: false,
+1 silly flags   scope: 'provoice-mobile',
+1 silly flags   args: [ 'native-base@2.7.2' ] }
 2 verbose rootPath /home/engrsunday/workspace/provoice
 3 info version 2.11.0
-4 silly existsSync /home/engrsunday/workspace/provoice/VERSION
-<<<<<<< HEAD
-5 silly initialize attempt
-6 silly initialize success
-7 silly execute attempt
-8 silly runScriptInPackageStreaming [ 'test', [], 'provoice-web' ]
-9 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-backend' }
-10 error execute callback with error
-11 error Error: Command failed: yarn run test
-11 error FAIL src/test/routes.test.js
-11 error   GET /list
-11 error     ✕ should error without a valid parameter (21ms)
-11 error   GET /404
-11 error     ✓ should return 404 for non-existent URLs (57ms)
-11 error
-11 error   ● GET /list › should error without a valid parameter
-11 error
-11 error     listen EADDRINUSE :::4002
-11 error
-11 error       at Object._errnoException (util.js:1022:11)
-11 error       at _exceptionWithHostPort (util.js:1044:20)
-11 error       at Server.setupListenHandle [as _listen2] (net.js:1367:14)
-11 error       at listenInCluster (net.js:1408:12)
-11 error       at Server.listen (net.js:1492:7)
-11 error       at Function.listen (node_modules/express/lib/application.js:618:24)
-11 error       at Object.<anonymous> (src/server/index.js:48:53)
-11 error
-11 error Test Suites: 1 failed, 1 total
-11 error Tests:       1 failed, 1 passed, 2 total
-11 error Snapshots:   0 total
-11 error Time:        1.469s
-11 error Ran all test suites.
-11 error error Command failed with exit code 1.
-11 error error Command failed with exit code 1.
-11 error
-11 error $ yarn run test-only
-11 error $ jest --coverage
-11 error   console.log src/server/index.js:49
-11 error     Server is Up and Running at Port :  4002
-11 error
-11 error ------------|----------|----------|----------|----------|-------------------|
-11 error File        |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
-11 error ------------|----------|----------|----------|----------|-------------------|
-11 error All files   |    88.46 |    66.67 |       60 |    88.46 |                   |
-11 error  routes     |    77.78 |       50 |       50 |    77.78 |                   |
-11 error   routes.js |    77.78 |       50 |       50 |    77.78 |              9,20 |
-11 error  server     |    94.12 |      100 |    66.67 |    94.12 |                   |
-11 error   index.js  |    94.12 |      100 |    66.67 |    94.12 |                44 |
-11 error ------------|----------|----------|----------|----------|-------------------|
-11 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-11 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-11 error
-11 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
-11 error     at <anonymous>
-=======
-5 info versioning independent
-6 silly initialize attempt
-7 silly initialize success
-8 silly execute attempt
-9 silly runScriptInDir test [] provoice-api
-10 silly getExecOpts { cwd: '/home/engrsunday/workspace/provoice/packages/provoice-api' }
-11 error test Errored while running script in 'provoice-api'
-12 error execute callback with error
-13 error Error: Command failed: yarn run test
-13 error /bin/sh: 1: cross-env: not found
-13 error error Command failed with exit code 127.
-13 error $ cross-env NODE_ENV=test nyc --reporter=html --reporter=text  mocha --compilers js:babel-core/register --timeout 20000 --recursive src/tests
-13 error info Visit https://yarnpkg.com/en/docs/cli/run for documentation about this command.
-13 error
-13 error     at Promise.all.then.arr (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
-13 error     at <anonymous>
->>>>>>> api-setup
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /home/engrsunday/workspace/provoice/VERSION
+7 info versioning independent
+8 info scope provoice-mobile
+9 error EPACKAGES Errored while collecting packages and package graph
+10 error Error: No packages found that match scope 'provoice-mobile'
+10 error     at Function.filterPackages (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/PackageUtilities.js:252:17)
+10 error     at AddCommand.runPreparations (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:333:60)
+10 error     at /home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:209:18
+10 error     at new Promise (<anonymous>)
+10 error     at AddCommand.run (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/Command.js:193:14)
+10 error     at Object.handler (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/lib/commands/AddCommand.js:79:14)
+10 error     at Object.self.runCommand (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/lib/command.js:233:22)
+10 error     at Object.Yargs.self._parseArgs (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/yargs.js:990:30)
+10 error     at Object.Yargs.self.parse (/home/engrsunday/.nvm/versions/node/v8.11.1/lib/node_modules/lerna/node_modules/yargs/yargs.js:532:23)

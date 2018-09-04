@@ -13,7 +13,7 @@ module.exports = app => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(morgan(logs));
-  app.use(compress());
+  app.use(compress());  // Send all responses as gzip
   app.use(methodOverride());
   app.use(helmet());
   app.use(cors());

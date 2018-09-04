@@ -3,11 +3,16 @@ const express = require('express');
 const routes = require('../routes/v1');
 const error = require('../middlewares/error');
 const middlewaresConfig = require('./middlewares')
+import addSecurityMiddleware from '../middlewares/security';
+
 /**
 * Express instance
 * @public
 */
 const app = express();
+
+// Security middleware.
+addSecurityMiddleware(app);
 
 /**
 * Middlewares

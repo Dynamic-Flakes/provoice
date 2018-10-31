@@ -1,0 +1,13 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/provoice-api/package.json",
+        "packages/provoice-desktop/package.json",
+        "packages/provoice-mobile/package.json",
+        "packages/provoice-web/package.json"
+      ]
+    }
+  }
+}

@@ -10,7 +10,7 @@
         "ls": "lerna ls"
 	},
 	"devDependencies": {
-		"lerna": "^2.11.0"
+		"lerna": "^3.4.3"
 	},
 	"repository": {
 		"type": "git",

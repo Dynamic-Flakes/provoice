@@ -1,5 +1,7 @@
 # provoice
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Dynamic-Flakes/provoice.svg)](https://greenkeeper.io/)
+
 The Invoice app
 
 This project uses the following technology:

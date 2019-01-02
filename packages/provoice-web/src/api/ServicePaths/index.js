@@ -5,7 +5,7 @@ export default {
       path: 'signup'
     },
     login: {
-      path: 'signin'
+      path: 'login'
     },
     logout: {
       path: 'logout'
@@ -27,6 +27,15 @@ export default {
     },
     userinfo: {
       path: 'userInfo'
+    },
+    userSession: {
+      path: 'userSession'
+    },
+    userLang: {
+      path: 'userSession/language'
+    },
+    availableLang: {
+      path: 'login/availableLanguages'
     },
   }
 };

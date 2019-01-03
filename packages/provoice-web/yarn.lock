@@ -7965,6 +7965,13 @@ react-error-overlay@^5.1.1:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.1.tgz#56f0439f001ff3588da0f479a86482ccb1e708cb"
   integrity sha512-gJcOyak5ri9mzhpFObSAkCqNNBCVZE8LaR/mX37agULgSL0dobgX11NVSIetvNzhHMkr6CIqV0xiutvvcjBtkw==
 
+react-frontload@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-frontload/-/react-frontload-1.0.3.tgz#8a89f0ffd011e4dc9d4586d78620e046caedd43a"
+  integrity sha512-AdFaIwvzexk41e7tjvACcoOl4fBstosknMI7fQNcrK3NsALlSa9bQPRKWcdTLngN9SRVpkrudprsFxuGKHWCmg==
+  dependencies:
+    prop-types "^15.6.2"
+
 react-helmet@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"

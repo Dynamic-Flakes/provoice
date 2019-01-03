@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory, createMemoryHistory } from 'history';
 
-import rootReducer from './rootReducers';
+import rootReducer from './rootReducer';
 
 // A nice helper to tell us if we're on the server
 export const isServer = !(

@@ -4,10 +4,10 @@ import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
 import { Frontload } from 'react-frontload';
 import { ConnectedRouter } from 'connected-react-router';
-
 import createStore from '../src/redux/store/store';
-import App from './App';
+import Router from '../src/routes';
 import './index.css';
+import { BrowserRouter } from 'react-router-dom';
 
 // Create a store and get back itself and its history object
 const { store, history } = createStore();
@@ -16,11 +16,11 @@ const { store, history } = createStore();
 // Let's also let React Frontload explicitly know we're not rendering on the server here
 const Application = (
   <Provider store={store}>
-    <ConnectedRouter history={history}>
+    <BrowserRouter history={history}>
       <Frontload noServerRender={true}>
-        <App />
+        { Router()}
       </Frontload>
-    </ConnectedRouter>
+    </BrowserRouter>
   </Provider>
 );
 
@@ -34,5 +34,5 @@ if (root.hasChildNodes() === true) {
   });
 } else {
   // If we're not running on the server, just render like normal
- // render(Application, root);
+ render(Application, root);
 }

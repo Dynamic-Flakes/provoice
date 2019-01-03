@@ -8,6 +8,7 @@ const defaultState = {
 };
 
 export default function loginReducer(state = defaultState, action) {
+    console.log("this is action ", action)
     switch (action.type) {
         case actionTypes.LOGIN_REQUEST:
             return {

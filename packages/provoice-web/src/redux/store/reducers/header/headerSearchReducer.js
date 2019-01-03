@@ -35,5 +35,7 @@ export default function headerSearchReducer(state = defaultState, action) {
         error
       }
     }
+    default:
+      return state;
   }
 }

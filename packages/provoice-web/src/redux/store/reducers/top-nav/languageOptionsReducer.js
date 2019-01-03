@@ -35,5 +35,7 @@ export default function languageOptionsReducer(state = defaultState, action) {
         error
       }
     }
+    default:
+      return state;
   }
 }

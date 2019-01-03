@@ -1,7 +1,7 @@
 import * as actionTypes from "../actions/types";
 
 const defaultState = {
-    gettingUser: false,
+    fetchingUser: false,
     activeUser: {},
     error: ""
 };
@@ -11,12 +11,12 @@ export default function headerActiveUserReducer(state = defaultState, action) {
         case actionTypes.ACTIVE_USER_REQUEST:
             return {
                 ...state,
-                gettingUser: true
+                fetchingUser: true
             }
         case actionTypes.ACTIVE_USER_REQUEST_SUCCESS:
             return {
                 ...state,
-                gettingUser: false,
+                fetchingUser: false,
                 activeUser: action.result
             }
         case actionTypes.ACTIVE_USER_REQUEST_FAIL: {
@@ -30,7 +30,7 @@ export default function headerActiveUserReducer(state = defaultState, action) {
             }
             return {
                 ...state,
-                gettingUser: false,
+                fetchingUser: false,
                 activeUser: null,
                 error
             }

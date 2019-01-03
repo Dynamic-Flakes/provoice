@@ -1,25 +1,25 @@
 import * as actionTypes from "../actions/types";
 
 const defaultState = {
-    fetchingNotification: false,
-    notifications: {},
+    fetchingMenuItems: false,
+    menuItems: {},
     error: ""
 };
 
-export default function headerNotificationReducer(state = defaultState, action) {
+export default function topMenuReducer(state = defaultState, action) {
     switch (action.type) {
-        case actionTypes.NOTIFICATION_REQUEST:
+        case actionTypes.TOP_MENU_REQUEST:
             return {
                 ...state,
-                fetchingNotification: true
+                fetchingMenuItems: true
             }
-        case actionTypes.NOTIFICATION_REQUEST_SUCCESS:
+        case actionTypes.TOP_MENU_REQUEST_SUCCESS:
             return {
                 ...state,
-                fetchingNotification: false,
-                notifications: action.result
+                fetchingMenuItems: false,
+                menuItems: action.result
             }
-        case actionTypes.NOTIFICATION_REQUEST_FAIL: {
+        case actionTypes.TOP_MENU_REQUEST_FAIL: {
             let error = null
             switch (action.error.status) {
                 case 409:
@@ -30,8 +30,8 @@ export default function headerNotificationReducer(state = defaultState, action) 
             }
             return {
                 ...state,
-                fetchingNotification: false,
-                notifications: null,
+                fetchingMenuItems: false,
+                menuItems: null,
                 error
             }
         }

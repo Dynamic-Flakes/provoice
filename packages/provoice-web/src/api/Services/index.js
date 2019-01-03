@@ -16,7 +16,7 @@ const loginCompletionRequest = role =>
 const logoutRequest = () =>
   axios.get(`${apiPaths.logout.path}`);
 
-const resetPasswordRequest = data =>
+const doResetPassword = data =>
   axios.post(`${apiPaths.sendPasswordReset.path}`, { ...data });
 
 const resendActionationEmail = email =>
@@ -62,7 +62,7 @@ const unsubscribe = id =>
     doRegister,
     loginCompletionRequest,
     logoutRequest,
-    resetPasswordRequest,
+    doResetPassword,
     resendActionationEmail,
     recoverPassword,
     changePassword,

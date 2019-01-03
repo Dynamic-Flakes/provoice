@@ -2,40 +2,61 @@ export default {
   path: 'https://localhost:4000/',
   children: {
     signup: {
-      path: 'signup'
+      path: 'users/signup'
     },
     login: {
-      path: 'login'
+      path: 'users/login'
     },
     logout: {
-      path: 'logout'
+      path: 'users/logout'
     },
     resetpassword: {
-      path: 'resetpassword'
+      path: 'users/resetpassword'
     },
     forgotpassword: {
-      path: 'forgotpassword'
+      path: 'users/forgotpassword'
     },
     sendemail: {
-      path: 'sendEmailActivation'
+      path: 'users/sendEmailActivation'
     },
     confirmregistration: {
-      path: 'registrationCOnfirmation'
+      path: 'users/registrationcOnfirmation'
     },
-    user: {
-      path: 'userProfile'
+    userprofile_user: {
+      path: '/users/getuserprofile_user'
     },
-    userinfo: {
-      path: 'userInfo'
+    addprofilepicture: {
+      path: '/users/addprofilepicture'
+    },
+    userDetails: {
+      path: '/users/getUserDetails'
+    },
+    createProfile: {
+      path: '/user/createProfile'
+    },
+    editProfile: {
+      path: '/users/editprofileofuser'
+    },
+    addUserCard: {
+      path: '/users/addusercard'
+    },
+    carDetails: {
+      path: '/users/getcardetails'
+    },
+    creditCarddetails: {
+      path: '/users/getcreditcarddetails'
     },
     userSession: {
-      path: 'userSession'
+      path: 'usersession'
     },
     userLang: {
-      path: 'userSession/language'
+      path: 'usersession/language'
     },
     availableLang: {
       path: 'login/availableLanguages'
+    },
+    filterCards: {
+      path: '/listings/filterCards'
     },
   }
 };

@@ -4,55 +4,76 @@ import apiPathsRoot from '../ServicePaths';
 const apiPaths = apiPathsRoot.children;
 
 // ============= Auth ====================
-export const loginRequest = data =>
+const loginRequest = data =>
   axios.post(`${apiPaths.login.path}`, { data: JSON.stringify(data) });
 
-export const registerRequest = (data) =>
+const registerRequest = (data) =>
   axios.post(`${apiPaths.signup.path}`, { data: JSON.stringify(data) });
 
-export const loginCompletionRequest = role =>
+const loginCompletionRequest = role =>
   axios.post(`${apiPaths}`, { role: JSON.stringify(role) });
 
-export const logoutRequest = () =>
+const logoutRequest = () =>
   axios.get(`${apiPaths.logout.path}`);
 
-export const resetPasswordRequest = data =>
+const resetPasswordRequest = data =>
   axios.post(`${apiPaths.sendPasswordReset.path}`, { ...data });
 
-export const resendActionationEmail = email =>
+const resendActionationEmail = email =>
   axios.post(`${apiPaths}`, { email: JSON.stringify(email) });
 
-export const recoverPassword = identifier =>
+const recoverPassword = identifier =>
   axios.post(`${apiPaths}`, { identifier });
 
-export const changePassword = (oldPassword, newPassword) =>
+const changePassword = (oldPassword, newPassword) =>
   axios.patch(`${apiPaths}`, { oldPassword, newPassword });
 
-export const deleteAccount = () =>
+const deleteAccount = () =>
   axios.delete(`${apiPaths}`);
 
 // ============================ Language ==================
-export const getUserLang = () =>
+const getUserLang = () =>
   axios.get(`${apiPaths.availableLang.path}`);
 
-export const setUserLang = payload => 
+const setUserLang = payload => 
   axios.put(`${apiPaths.userLang.path}`, {payload});
 
-export const getAvailableLang = () => 
+const getAvailableLang = () => 
   axios.get(`${apiPaths.availableLang.path}`);
 
-export const getAvatar = id => 
+const getAvatar = id => 
   axios.get(`${apiPaths}/image/${id}?maxWidth=200&maxHeight=200`);
 
-export const getUserSession = () => 
+const getUserSession = () => 
   axios.get(`${apiPaths.userSession.path}`);
 
 //======= News letter suscription ====== 
-export const getSubscriptions = () => 
+const getSubscriptions = () => 
   axios.get(`${apiPaths}`);
 
-export const subscribe = (id) => {
+const subscribe = (id) => 
   axios.post(`${apiPaths}`, {id});
 
-export const unsubscribe = (id) =>
+const unsubscribe = id =>
   axios.delete(`${apiPaths}`, {id});
+
+  export {
+    loginRequest,
+    registerRequest,
+    loginCompletionRequest,
+    logoutRequest,
+    resetPasswordRequest,
+    resendActionationEmail,
+    recoverPassword,
+    changePassword,
+    deleteAccount,
+    getUserLang,
+    setUserLang,
+    getAvailableLang,
+    getAvatar,
+    getUserSession,
+    getSubscriptions,
+    subscribe,
+    unsubscribe
+    };
+  

@@ -35,5 +35,7 @@ export default function headerActiveUserReducer(state = defaultState, action) {
                 error
             }
         }
+        default:
+            return state;
     }
 }

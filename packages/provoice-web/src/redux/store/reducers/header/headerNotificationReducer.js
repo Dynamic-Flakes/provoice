@@ -35,5 +35,7 @@ export default function headerNotificationReducer(state = defaultState, action) 
                 error
             }
         }
+        default:
+            return state;
     }
 }

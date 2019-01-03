@@ -36,5 +36,7 @@ export default function registerReducer(state = defaultState, action) {
         error
       }
     }
+    default:
+      return state;
   }
 }

@@ -8,22 +8,24 @@ const defaultState = {
 
 export default function logoutReducer(state = defaultState, action) {
   switch (action.type) {
-    case LOGOUT:
+    case actionTypes.LOGOUT:
       return {
         ...state,
         loggingOut: true
       }
-    case LOGOUT_SUCCESS:
+    case actionTypes.LOGOUT_SUCCESS:
       return {
         ...state,
         loggingOut: false,
         isLoggedIn: false,
         user: null
       }
-    case LOGOUT_FAIL:
+    case actionTypes.LOGOUT_FAIL:
       return {
         ...state,
         loggingOut: false
       }
+    default:
+      return state;
   }
 }

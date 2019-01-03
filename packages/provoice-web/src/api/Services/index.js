@@ -7,7 +7,7 @@ const apiPaths = apiPathsRoot.children;
 const loginRequest = data =>
   axios.post(`${apiPaths.login.path}`, { data: JSON.stringify(data) });
 
-const registerRequest = (data) =>
+const doRegister = (data) =>
   axios.post(`${apiPaths.signup.path}`, { data: JSON.stringify(data) });
 
 const loginCompletionRequest = role =>
@@ -59,7 +59,7 @@ const unsubscribe = id =>
 
   export {
     loginRequest,
-    registerRequest,
+    doRegister,
     loginCompletionRequest,
     logoutRequest,
     resetPasswordRequest,

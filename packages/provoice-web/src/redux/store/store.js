@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory, createMemoryHistory } from 'history';
+import thunk from 'redux-thunk';
 
 import rootReducer from './rootReducer';
 
@@ -30,7 +31,7 @@ export default (url = '/') => {
     }
   }
   const middlewares = [
-    // thunk or observable here,
+    thunk ,
     routerMiddleware(history)
   ];
   const composedEnhancers = compose(

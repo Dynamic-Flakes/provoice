@@ -1,8 +1,11 @@
 import { push } from 'react-router-redux';
+import {browserHistory} from 'utils/browser_history';
 
 import { storeItem } from 'src/helpers/localStorage';
 import * as actionTypes from "../../actions/types";
 import { doRegister } from  '../../../../api/Services'
+import setAuthorizationHeader from "../utils/setAuthorizationHeader";
+
 
 
 /**
@@ -34,6 +37,7 @@ export function signupRequest () {
         .then(response => {
           dispatch(signupSuccess(response.username));
           storeItem('provoice', response.data.token);
+          setAuthorizationHeader(response.data.token);
           dispatch(push('/'));
         })
       .catch(err => {

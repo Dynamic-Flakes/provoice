@@ -18,9 +18,10 @@ export default function loginReducer(state = defaultState, action) {
         case actionTypes.LOGIN_SUCCESS:
             return {
                 ...state,
-                isLoggedIn: false,
+                isLoggedIn: true,
                 isLoggingIn: false,
                 loginError: "",
+                accessToken: action.result.accessToken,
                 user: action.payload
             };
         case actionTypes.LOGIN_FAIL:

@@ -11,19 +11,23 @@ export default function logoutReducer(state = defaultState, action) {
     case actionTypes.LOGOUT:
       return {
         ...state,
-        loggingOut: true
+        loggingOut: true,
+        isLoggedIn: true
       }
     case actionTypes.LOGOUT_SUCCESS:
       return {
         ...state,
         loggingOut: false,
         isLoggedIn: false,
+        accessToken: null,
         user: null
       }
     case actionTypes.LOGOUT_FAIL:
       return {
         ...state,
-        loggingOut: false
+        loggingOut: false,
+        logoutError: action.error
+
       }
     default:
       return state;

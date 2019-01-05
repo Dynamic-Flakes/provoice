@@ -17,11 +17,19 @@
     "redux": "^4.0.1",
     "redux-form": "^8.1.0"
   },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "connect": "3.6.6",
+    "corser": "2.0.1",
+    "cross-env": "4.0.0",
+    "mockserver": "1.7.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock": "node ./src/mockserver/"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -2,7 +2,7 @@ import { push } from 'react-router-redux';
 
 import { storeItem } from 'src/helpers/localStorage';
 import * as actionTypes from "../../actions/types";
-import { doRegister } from  '../../../../api/Services'
+import { doLogin } from  '../../../../api/Services'
 import setAuthorizationHeader from "../utils/setAuthorizationHeader";
 
 
@@ -10,37 +10,37 @@ import setAuthorizationHeader from "../utils/setAuthorizationHeader";
 /**
  * ## Signup actions
  */
-export function signupRequest () {
+export function loginRequest () {
     return {
-      type: actionTypes.SIGNUP_REQUEST
+      type: actionTypes.LOGIN_REQUEST
     }
   }
-  export function signupSuccess (json) {
+  export function loginSuccess (data) {
     return {
-      type: actionTypes.SIGNUP_SUCCESS,
-      payload: json
+      type: actionTypes.LOGIN_SUCCESS,
+      payload: data
     }
   }
-  export function signupFailure (error) {
+  export function loginFailure (error) {
     return {
-      type: actionTypes.SIGNUP_FAILURE,
+      type: actionTypes.LOGIN_FAILURE,
       payload: error
     }
   }
 
   // redux async action
-  export function signup (data) {
+  export function login(data) {
     return dispatch => {
-      dispatch(signupRequest())
-        doRegister(data)
+      dispatch(loginRequest())
+       doLogin(data)
         .then(response => {
-          dispatch(signupSuccess( response.data.token));
+          dispatch(loginSuccess( response.data.token));
           storeItem('provoice', response.data.token);
           setAuthorizationHeader(response.data.token);
           dispatch(push('/'));
         })
       .catch(err => {
-          dispatch(signupFailure(err.response.data.error));
+          dispatch(loginFailure(err.response.data.error));
       });
 };
 };

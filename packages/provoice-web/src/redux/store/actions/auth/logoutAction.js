@@ -9,7 +9,7 @@ import * as actionTypes from "../../actions/types";
  */
 export function logoutRequest () {
   return {
-    type: actionTypes.LOGOUT
+    type: actionTypes.LOGOUT_REQUEST
   }
 }
 
@@ -20,7 +20,7 @@ export function logoutSuccess () {
 }
 export function logoutFailure (error) {
   return {
-    type: actionTypes.LOGIN_FAIL,
+    type: actionTypes.LOGIN_FAILURE,
     payload: error
   }
 }

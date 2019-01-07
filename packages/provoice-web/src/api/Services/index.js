@@ -4,7 +4,7 @@ import apiPathsRoot from '../ServicePaths';
 const apiPaths = apiPathsRoot.children;
 
 // ============= Auth ====================
-const loginRequest = data =>
+const doLogin = data =>
   axios.post(`${apiPaths.login.path}`, { data: JSON.stringify(data) });
 
 const doRegister = (data) =>
@@ -58,7 +58,7 @@ const unsubscribe = id =>
   axios.delete(`${apiPaths}`, {id});
 
   export {
-    loginRequest,
+    doLogin,
     doRegister,
     loginCompletionRequest,
     logoutRequest,

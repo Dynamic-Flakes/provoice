@@ -2,16 +2,16 @@
 // AUTH
 export const LOGIN_REQUEST = "auth/LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "auth/LOGIN_SUCCESS";
-export const LOGIN_FAIL = "auth/LOGIN_FAIL";
+export const LOGIN_FAILURE = "auth/LOGIN_FAIL";
 export const RESET_LOGIN_STATE = "auth/RESET_LOGIN_STATE";
 
-export const SIGNUP = 'auth/SIGNUP';
+export const SIGNUP_REQUEST = 'auth/SIGNUP';
 export const SIGNUP_SUCCESS = 'auth/SIGNUP_SUCCESS';
-export const SIGNUP_FAIL = 'auth/SIGNUP_FAIL';
+export const SIGNUP_FAILURE = 'auth/SIGNUP_FAIL';
 
-export const LOGOUT = 'auth/LOGOUT';
+export const LOGOUT_REQUEST = 'auth/LOGOUT';
 export const LOGOUT_SUCCESS = 'auth/LOGOUT_SUCCESS';
-export const LOGOUT_FAIL = 'auth/LOGOUT_FAIL';
+export const LOGOUT_FAILURE = 'auth/LOGOUT_FAIL';
 
 export const RESET_PASSWORD_REQUEST = 'auth/RESET_PASSWORD_REQUEST';
 export const RESET_PASSWORD_SUCCESS = 'auth/RESET_PASSWORD_SUCCESS';

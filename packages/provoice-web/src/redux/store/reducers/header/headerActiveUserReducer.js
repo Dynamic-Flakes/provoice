@@ -19,22 +19,14 @@ export default function headerActiveUserReducer(state = defaultState, action) {
                 fetchingUser: false,
                 activeUser: action.result
             }
-        case actionTypes.ACTIVE_USER_REQUEST_FAIL: {
-            let error = null
-            switch (action.error.status) {
-                case 409:
-                    error = 'Conflict.'
-                    break
-                default:
-                    error = 'Při registraci došlo k neznámé chybě.'
-            }
+        case actionTypes.ACTIVE_USER_REQUEST_FAIL: 
             return {
                 ...state,
                 fetchingUser: false,
                 activeUser: null,
-                error
+                error:action.error
+
             }
-        }
         default:
             return state;
     }

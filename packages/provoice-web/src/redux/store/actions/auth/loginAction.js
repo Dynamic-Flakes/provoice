@@ -8,7 +8,7 @@ import setAuthorizationHeader from "../utils/setAuthorizationHeader";
 
 
 /**
- * ## Signup actions
+ * ## login actions
  */
 export function loginRequest () {
     return {

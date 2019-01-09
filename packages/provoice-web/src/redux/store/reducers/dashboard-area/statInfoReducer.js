@@ -19,22 +19,15 @@ export default function statCardReducers(state = defaultState, action) {
                 fetchingStatInfo: false,
                 statInfo: action.result
             }
-        case actionTypes.STAT_INFO_REQUEST_FAIL: {
-            let error = null
-            switch (action.error.status) {
-                case 409:
-                    error = 'Conflict.'
-                    break
-                default:
-                    error = 'Při registraci došlo k neznámé chybě.'
-            }
+        case actionTypes.STAT_INFO_REQUEST_FAIL: 
             return {
                 ...state,
                 fetchingStatInfo: false,
                 statInfo: null,
-                error
+                error:action.error
+
             }
-        }
+        
         default:
             return state;
     }

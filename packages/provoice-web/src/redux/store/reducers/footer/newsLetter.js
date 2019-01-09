@@ -19,15 +19,15 @@ export default function headerSearchReducer(state = defaultState, action) {
                 isSending: false,
                 message: action.result
             }
-        case actionTypes.SUBSCRIBE_REQUEST_FAIL: {
-            let error = null
+        case actionTypes.SUBSCRIBE_REQUEST_FAIL: 
             return {
                 ...state,
                 isSending: false,
                 message: null,
-                error
+                error:action.error
+
             }
-        }
+        
         default:
             return state;
     }

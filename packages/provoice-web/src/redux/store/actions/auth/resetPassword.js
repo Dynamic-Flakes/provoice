@@ -12,9 +12,10 @@ export function resetPasswordRequest () {
     }
   }
   
-  export function resetPasswordSuccess () {
+  export function resetPasswordSuccess (message) {
     return {
-      type: actionTypes.RESET_PASSWORD_SUCCESS
+      type: actionTypes.RESET_PASSWORD_SUCCESS,
+      message
     }
   }
   
@@ -31,7 +32,7 @@ export function resetPasswordRequest () {
       dispatch(resetPasswordRequest())
       doResetPassword(email)
         .then(response => {
-          dispatch(resetPasswordSuccess());
+          dispatch(resetPasswordSuccess(response.message));
           dispatch(push('/'));
         })
       .catch(err => {

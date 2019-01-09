@@ -20,19 +20,11 @@ export default function clientDetailsReducer(state = defaultState, action) {
                 clientInfo: action.result
             }
         case actionTypes.CLIENT_DETAILS_REQUEST_FAIL: {
-            let error = null
-            switch (action.error.status) {
-                case 409:
-                    error = 'Conflict.'
-                    break
-                default:
-                    error = 'Při registraci došlo k neznámé chybě.'
-            }
             return {
                 ...state,
                 fetchingClientInfo: false,
                 clientInfo: null,
-                error
+                error:action.error
             }
         }
         default:

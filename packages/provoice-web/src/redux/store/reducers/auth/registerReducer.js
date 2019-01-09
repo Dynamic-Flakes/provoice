@@ -1,12 +1,12 @@
 import * as actionTypes from "../../actions/types";
 
-const defaultState = {
+export const getInitialData = () => ({
   isSigningUp: false,
   user: {},
   error: ""
-};
+});
 
-export default function registerReducer(state = defaultState, action) {
+export default function registerReducer(state = getInitialData(), action) {
   switch (action.type) {
     case actionTypes.SIGNUP:
       return {
@@ -19,23 +19,14 @@ export default function registerReducer(state = defaultState, action) {
         isSigningUp: false,
         user: action.result
       }
-    case actionTypes.SIGNUP_FAIL: {
-      let error = null
-
-      switch (action.error.status) {
-        case 409:
-          error = 'Conflict.'
-          break
-        default:
-          error = 'Při registraci došlo k neznámé chybě.'
-      }
+    case actionTypes.SIGNUP_FAIL: 
       return {
         ...state,
         isSigningUp: false,
         user: null,
-        error
+        error:action.error
+
       }
-    }
     default:
       return state;
   }

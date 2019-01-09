@@ -1,12 +1,11 @@
 import * as actionTypes from "../../actions/types";
 
-const defaultState = {
+export const getInitialData = () => ({
   loggingOut: false,
   isLoggedIn: true,
   user: {},
-};
-
-export default function logoutReducer(state = defaultState, action) {
+});
+export default function logoutReducer(state = getInitialData(), action) {
   switch (action.type) {
     case actionTypes.LOGOUT:
       return {

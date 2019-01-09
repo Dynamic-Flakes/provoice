@@ -19,21 +19,13 @@ export default function languageOptionsReducer(state = defaultState, action) {
         fetchingLangOptions: false,
         langOptions: action.result
       }
-    case actionTypes.LANGUAGE_OPTIONS_REQUEST_FAIL: {
-      let error = null
-      switch (action.error.status) {
-        case 409:
-          error = 'Conflict.'
-          break
-        default:
-          error = 'Při registraci došlo k neznámé chybě.'
-      }
+    case actionTypes.LANGUAGE_OPTIONS_REQUEST_FAIL: 
       return {
         ...state,
         fetchingLangOptions: false,
         langOptions: null,
-        error
-      }
+        error:action.error
+      
     }
     default:
       return state;

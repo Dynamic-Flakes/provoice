@@ -19,22 +19,14 @@ export default function dashboardChartReducer(state = defaultState, action) {
         fetchingChartData: false,
         chartData: action.result
       }
-    case actionTypes.CHART_DATA_REQUEST_FAIL: {
-      let error = null
-      switch (action.error.status) {
-        case 409:
-          error = 'Conflict.'
-          break
-        default:
-          error = 'Při registraci došlo k neznámé chybě.'
-      }
+    case actionTypes.CHART_DATA_REQUEST_FAIL: 
       return {
         ...state,
         fetchingChartData: false,
         chartData: null,
-        error
+        error:action.error
       }
-    }
+    
     default:
       return state;
   }

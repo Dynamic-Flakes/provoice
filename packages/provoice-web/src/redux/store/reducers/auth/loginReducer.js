@@ -1,13 +1,15 @@
 import * as actionTypes from "../../actions/types";
 
-const defaultState = {
+export const getInitialData = () => ({
     isLoggingIn: false,
     isLoggedIn: false,
     user: {},
-    loginError: ""
-};
+    loginError: "",
+    loginDate: null,
 
-export default function loginReducer(state = defaultState, action) {
+  });
+  
+export default function loginReducer(state = getInitialData(), action) {
     console.log("this is action ", action)
     switch (action.type) {
         case actionTypes.LOGIN_REQUEST:
@@ -23,6 +25,8 @@ export default function loginReducer(state = defaultState, action) {
                 accessToken: action.result.accessToken,
                 refreshToken: action.result.refresh_token,
                 user: action.payload,
+                loginDate: new Date(),
+
             };
         case actionTypes.LOGIN_FAIL:
             return {
@@ -32,7 +36,7 @@ export default function loginReducer(state = defaultState, action) {
                 loginError: action.error
             };
         case actionTypes.RESET_LOGIN_STATE:
-            return defaultState;
+            return getInitialData();
         default:
             return state;
     }

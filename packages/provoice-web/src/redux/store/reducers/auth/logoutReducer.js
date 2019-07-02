@@ -7,7 +7,7 @@ export const getInitialData = () => ({
 });
 export default function logoutReducer(state = getInitialData(), action) {
   switch (action.type) {
-    case actionTypes.LOGOUT:
+    case actionTypes.LOGOUT_REQUEST:
       return {
         ...state,
         loggingOut: true,
@@ -21,7 +21,7 @@ export default function logoutReducer(state = getInitialData(), action) {
         accessToken: null,
         user: null
       }
-    case actionTypes.LOGOUT_FAIL:
+    case actionTypes.LOGOUT_FAILURE:
       return {
         ...state,
         loggingOut: false,

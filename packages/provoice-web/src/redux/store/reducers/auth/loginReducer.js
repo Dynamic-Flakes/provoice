@@ -7,8 +7,8 @@ export const getInitialData = () => ({
     loginError: "",
     loginDate: null,
 
-  });
-  
+});
+
 export default function loginReducer(state = getInitialData(), action) {
     console.log("this is action ", action)
     switch (action.type) {
@@ -28,7 +28,7 @@ export default function loginReducer(state = getInitialData(), action) {
                 loginDate: new Date(),
 
             };
-        case actionTypes.LOGIN_FAIL:
+        case actionTypes.LOGOUT_FAILURE:
             return {
                 ...state,
                 isLoggedIn: false,

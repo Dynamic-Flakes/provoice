@@ -8,7 +8,7 @@ export const getInitialData = () => ({
 
 export default function registerReducer(state = getInitialData(), action) {
   switch (action.type) {
-    case actionTypes.SIGNUP:
+    case actionTypes.SIGNUP_REQUEST:
       return {
         ...state,
         isSigningUp: true
@@ -19,12 +19,12 @@ export default function registerReducer(state = getInitialData(), action) {
         isSigningUp: false,
         user: action.result
       }
-    case actionTypes.SIGNUP_FAIL: 
+    case actionTypes.SIGNUP_FAILURE:
       return {
         ...state,
         isSigningUp: false,
         user: null,
-        error:action.error
+        error: action.error
 
       }
     default:
